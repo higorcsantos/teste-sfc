@@ -34,7 +34,7 @@ app.get("/users", teste1.getUsers);
 app.post("/users", teste2)
 app.delete("/users", checkUserPermission , teste3)
 app.put("/users", checkUserPermission ,teste4)
-app.get("/users/access", teste5);
+app.get("/users/access", teste5.getSearchCount);
 
 
 const port  = 3000;
