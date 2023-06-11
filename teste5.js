@@ -8,9 +8,10 @@ const incrementCount = (name) => {
   }
 };
 
-const getSearchCount = (name) => {
+const getSearchCount = (req, res) => {
+  const { name } = req.query;
   const count = searchCount[name] || 0;
-  return { name, count };
+  res.status(200).json({ name, count });
 };
 
 module.exports = {
