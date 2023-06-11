@@ -5,7 +5,7 @@ function checkUserPermission(req, res, next) {
   const token = req.headers.authorization;
 
   if (!token) {
-    return res.status(401).send("Token de autenticação não fornecido.");
+    return res.status(401).send("Authetication token not provided.");
   }
 
   try {

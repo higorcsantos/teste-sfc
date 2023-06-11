@@ -3,8 +3,8 @@ const fakeData = require("./fakeData");
 module.exports = function(req, res) {
     const id = req.query.id;
   
-    if (!name) {
-      return res.status(400).send("O parâmetro 'name' é obrigatório.");
+    if (!id) {
+      return res.status(400).send("Id is required.");
     }
   
     const index = fakeData.findIndex(obj => obj.id === id);
