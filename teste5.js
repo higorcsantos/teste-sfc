@@ -1,9 +1,19 @@
+const searchCount = {};
 
+const incrementCount = (name) => {
+  if (searchCount[name]) {
+    searchCount[name]++;
+  } else {
+    searchCount[name] = 1;
+  }
+};
 
-module.exports = function(req, res){
-    
-    var name =  req.query.name;
+const getSearchCount = (name) => {
+  const count = searchCount[name] || 0;
+  return { name, count };
+};
 
-    res.send("Usuário " +  name  + "  foi lido 0 vezes.");
-
+module.exports = {
+  incrementCount,
+  getSearchCount,
 };
